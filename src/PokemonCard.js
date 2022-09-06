@@ -5,7 +5,6 @@ import './PokemonCard.css';
 /* Renders a single pokemon card. */
 function PokemonCard({ front, back, name, stats }) {
   const [isFacingUp, setIsFacingUp] = useFlip();
-  // * go over with mentor, don't understand why this works this way.
   return (
     <div onClick={setIsFacingUp} className="PokemonCard Card">
       {isFacingUp ? (
