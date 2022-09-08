@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { v4 as uuid } from 'uuid';
 import axios from 'axios';
 import PokemonSelect from './PokemonSelect';

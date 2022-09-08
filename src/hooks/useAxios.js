@@ -5,9 +5,15 @@ import uuid from 'uuid';
 // * Attempt 1
 const useAxios = (BASE_URL) => {
   const [data, setData] = useState([]);
-  const addData = async (option = '') => {
+  const addData = async (option) => {
     console.log(option);
-    const response = await axios.get(`${BASE_URL}${option}`);
+    let response = null;
+    if (typeof option === 'string') {
+      response = await axios.get(`${BASE_URL}${option}`);
+    } else {
+      response = await axios.get(`${BASE_URL}`);
+    }
+    // const response = await axios.get(`${BASE_URL}${option}`);
     setData((data) => [...data, { ...response.data, id: uuid() }]);
   };
   return [data, addData];
